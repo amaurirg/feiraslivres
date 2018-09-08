@@ -1,0 +1,15 @@
+DEBUG 2018-09-08 13:00:59 Consulta Lista 200
+DEBUG 2018-09-08 13:01:31 Registro:<QueryDict: {}> deletado com sucesso.
+DEBUG 2018-09-08 13:03:10 Registro deletado com sucesso.
+DEBUG 2018-09-08 13:03:58 Registro 7 deletado com sucesso.
+DEBUG 2018-09-08 13:05:40 Consulta Lista 200
+DEBUG 2018-09-08 13:06:02 b''
+DEBUG 2018-09-08 13:06:22 Registro 7066-1 Nome da Feira:TESTE status:202 alterado com sucesso.
+DEBUG 2018-09-08 13:09:32 Registro:7066-1 Nome:TESTE deletado com sucesso.
+ERROR 2018-09-08 13:11:45 Tentativa de alteração do registro <QueryDict: {'id': ['90'], 'long': ['7'], 'lat': ['7'], 'setcens': ['7'], 'areap': ['7'], 'coddist': ['7'], 'distrito': ['7'], 'codsubpref': ['7'], 'subprefe': ['7'], 'regiao5': ['7'], 'regiao8': ['7'], 'nome_feira': ['Ding Dong'], 'registro': ['7066-1'], 'logradouro': ['7'], 'numero': ['7'], 'bairro': ['7'], 'referencia': ['7']}> falhou.
+ERROR 2018-09-08 13:11:48 Tentativa de alteração do registro <QueryDict: {'id': ['90'], 'long': ['7'], 'lat': ['7'], 'setcens': ['7'], 'areap': ['7'], 'coddist': ['7'], 'distrito': ['7'], 'codsubpref': ['7'], 'subprefe': ['7'], 'regiao5': ['7'], 'regiao8': ['7'], 'nome_feira': ['Ding Dong'], 'registro': ['7066-1'], 'logradouro': ['7'], 'numero': ['7'], 'bairro': ['7'], 'referencia': ['7']}> falhou.
+ERROR 2018-09-08 13:11:51 Tentativa de alteração do registro <QueryDict: {'id': ['90'], 'long': ['7'], 'lat': ['7'], 'setcens': ['7'], 'areap': ['7'], 'coddist': ['7'], 'distrito': ['7'], 'codsubpref': ['7'], 'subprefe': ['7'], 'regiao5': ['7'], 'regiao8': ['7'], 'nome_feira': ['Ding Dong'], 'registro': ['7066-1'], 'logradouro': ['7'], 'numero': ['7'], 'bairro': ['7'], 'referencia': ['7']}> falhou.
+ERROR 2018-09-08 13:12:50 Tentativa de alteração do registro 7066-1 falhou.
+ERROR 2018-09-08 13:15:10 Tentativa de alteração do registro:7066-1 Nome:Ding Dong status:304 falhou.
+DEBUG 2018-09-08 13:16:47 Registro 7066-1 Nome:Ding Dong status:202 alterado com sucesso.
+DEBUG 2018-09-08 13:17:02 Registro 7066-1 Nome:Ding Dong status:202 alterado com sucesso.

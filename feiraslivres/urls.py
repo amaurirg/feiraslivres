@@ -4,6 +4,7 @@ from feiraslivres.core import views
 
 
 urlpatterns = [
+    path('', views.index),
     path('admin/', admin.site.urls),
     path('feiraslivres/', views.FeirasLivresLista.as_view()),
     path('feiralivre/<int:pk>/', views.FeiraLivre.as_view()),
