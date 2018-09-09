@@ -160,14 +160,13 @@ LOGGING = {
             'class': 'logging.FileHandler',
             'filters': ['require_debug_false'],
             'formatter': 'verbose',
-            'filename': os.path.join(BASE_DIR, 'core.views.log'),
+            'filename': os.path.join(BASE_DIR, 'arquivos/logs.log'),
         },
     },
     'loggers': {
         'core.views': {
             'handlers': ['file'],
             'level': 'DEBUG',
-            # 'propagate': True,
         },
     },
 }

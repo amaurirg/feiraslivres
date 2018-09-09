@@ -12,7 +12,6 @@ class FeirasLivresSerializer(serializers.ModelSerializer):
 
 class FeirasLivresPutSerializer(serializers.ModelSerializer):
 
-    # registro = serializers.ReadOnlyField(read_only=True, default=serializers.ReadOnlyField())
     class Meta:
 
         model = FeirasLivres
