@@ -1,0 +1,46 @@
+
+curl -X POST http://127.0.0.1:8000/feiraslivres/ \
+    -H "Content-Type: application/json" \
+    -d '{
+          "nome_feira": "ANGELICA",
+	  "registro": "9999-9",
+          "bairro": "CONSOLACAO",
+          "logradouro": "RUA MATO GROSSO C/ PARA",
+          "numero": "S/N",
+          "referencia": "TV DA RUA SERGIPE",
+          "lat": -23550464,
+          "long": -46659253,
+          "setcens": 355030826000014,
+          "areap": 3550308005013,
+          "coddist": 26,
+          "distrito": "CONSOLACAO",
+          "codsubpref": 9,
+          "subprefe": "SE",
+          "regiao5": "Centro",
+          "regiao8": "Centro"
+        }'
+
+
+curl -X PUT http://127.0.0.1:8000/feiralivre/9999-9/ \
+    -H "Content-Type: application/json" \
+    -d '{
+          "nome_feira": "NOVO VALOR",
+	  "registro": "9999-9",
+          "bairro": "NOVO VALOR",
+          "logradouro": "NOVO VALOR",
+          "numero": "NOVO VALOR",
+          "referencia": "NOVO VALOR",
+          "lat": 0,
+          "long": 0,
+          "setcens": 0,
+          "areap": 0,
+          "coddist": 0,
+          "distrito": "NOVO VALOR",
+          "codsubpref": 0,
+          "subprefe": "NOVO VALOR",
+          "regiao5": "NOVO VALOR",
+          "regiao8": "NOVO VALOR"
+        }'
+
+
+curl -X DELETE http://127.0.0.1:8000/feiralivre/9999-9

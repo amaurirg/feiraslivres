@@ -1,15 +1,43 @@
-DEBUG 2018-09-08 13:00:59 Consulta Lista 200
-DEBUG 2018-09-08 13:01:31 Registro:<QueryDict: {}> deletado com sucesso.
-DEBUG 2018-09-08 13:03:10 Registro deletado com sucesso.
-DEBUG 2018-09-08 13:03:58 Registro 7 deletado com sucesso.
-DEBUG 2018-09-08 13:05:40 Consulta Lista 200
-DEBUG 2018-09-08 13:06:02 b''
-DEBUG 2018-09-08 13:06:22 Registro 7066-1 Nome da Feira:TESTE status:202 alterado com sucesso.
-DEBUG 2018-09-08 13:09:32 Registro:7066-1 Nome:TESTE deletado com sucesso.
-ERROR 2018-09-08 13:11:45 Tentativa de alteração do registro <QueryDict: {'id': ['90'], 'long': ['7'], 'lat': ['7'], 'setcens': ['7'], 'areap': ['7'], 'coddist': ['7'], 'distrito': ['7'], 'codsubpref': ['7'], 'subprefe': ['7'], 'regiao5': ['7'], 'regiao8': ['7'], 'nome_feira': ['Ding Dong'], 'registro': ['7066-1'], 'logradouro': ['7'], 'numero': ['7'], 'bairro': ['7'], 'referencia': ['7']}> falhou.
-ERROR 2018-09-08 13:11:48 Tentativa de alteração do registro <QueryDict: {'id': ['90'], 'long': ['7'], 'lat': ['7'], 'setcens': ['7'], 'areap': ['7'], 'coddist': ['7'], 'distrito': ['7'], 'codsubpref': ['7'], 'subprefe': ['7'], 'regiao5': ['7'], 'regiao8': ['7'], 'nome_feira': ['Ding Dong'], 'registro': ['7066-1'], 'logradouro': ['7'], 'numero': ['7'], 'bairro': ['7'], 'referencia': ['7']}> falhou.
-ERROR 2018-09-08 13:11:51 Tentativa de alteração do registro <QueryDict: {'id': ['90'], 'long': ['7'], 'lat': ['7'], 'setcens': ['7'], 'areap': ['7'], 'coddist': ['7'], 'distrito': ['7'], 'codsubpref': ['7'], 'subprefe': ['7'], 'regiao5': ['7'], 'regiao8': ['7'], 'nome_feira': ['Ding Dong'], 'registro': ['7066-1'], 'logradouro': ['7'], 'numero': ['7'], 'bairro': ['7'], 'referencia': ['7']}> falhou.
-ERROR 2018-09-08 13:12:50 Tentativa de alteração do registro 7066-1 falhou.
-ERROR 2018-09-08 13:15:10 Tentativa de alteração do registro:7066-1 Nome:Ding Dong status:304 falhou.
-DEBUG 2018-09-08 13:16:47 Registro 7066-1 Nome:Ding Dong status:202 alterado com sucesso.
-DEBUG 2018-09-08 13:17:02 Registro 7066-1 Nome:Ding Dong status:202 alterado com sucesso.
+DEBUG 2018-09-09 01:47:39 Registro 9886-1 Nome:3 status:202 alterado com sucesso.
+DEBUG 2018-09-09 01:48:04 Registro 9886-0 Nome:3 status:202 alterado com sucesso.
+DEBUG 2018-09-09 02:02:48 Consulta Lista 200
+DEBUG 2018-09-09 02:05:29 Consulta Registro:6005-4.
+DEBUG 2018-09-09 02:08:59 Consulta Registro:9886-1.
+DEBUG 2018-09-09 02:09:28 Consulta Registro:9886-1.
+DEBUG 2018-09-09 02:09:35 Consulta Registro:9886-1.
+DEBUG 2018-09-09 02:12:14 Consulta Registro:9886-1.
+DEBUG 2018-09-09 02:12:29 Registro:9886-1 Nome:3 status:204 deletado com sucesso.
+DEBUG 2018-09-09 02:13:07 Consulta Lista 200
+DEBUG 2018-09-09 02:13:46 Consulta Registro:8888-8.
+DEBUG 2018-09-09 02:13:53 Registro:8888-8 Nome:8 status:204 deletado com sucesso.
+DEBUG 2018-09-09 02:15:51 Nova feira Registro:9999-9 Nome da Feira:ANGELICA status:201 criada com sucesso.
+DEBUG 2018-09-09 02:16:26 Consulta Registro:9999-9.
+DEBUG 2018-09-09 02:16:40 Registro 9999-9 Nome:NOVO VALOR status:202 alterado com sucesso.
+DEBUG 2018-09-09 02:21:47 Consulta Registro:9999-9.
+DEBUG 2018-09-09 02:22:00 Registro:9999-9 Nome:NOVO VALOR status:204 deletado com sucesso.
+DEBUG 2018-09-09 02:26:08 Nova feira Registro:9999-9 Nome da Feira:ANGELICA status:201 criada com sucesso.
+DEBUG 2018-09-09 02:26:36 Registro 9999-0 Nome:NOVO VALOR status:202 alterado com sucesso.
+INFO 2018-09-09 02:27:01 Falhou
+DEBUG 2018-09-09 02:27:01 Consulta Registro:9999-9.
+DEBUG 2018-09-09 02:27:38 Registro 9999-0 Nome:NOVO VALOR status:202 alterado com sucesso.
+DEBUG 2018-09-09 02:29:44 Registro 9999-9 Nome:NOVO VALOR status:202 alterado com sucesso.
+DEBUG 2018-09-09 02:31:00 Registro 9999-9 Nome:NOVO VALOR status:202 alterado com sucesso.
+INFO 2018-09-09 02:31:16 Falhou
+DEBUG 2018-09-09 02:31:16 Consulta Registro:9999-9.
+DEBUG 2018-09-09 02:31:23 Registro 9999-9 Nome:NOVO VALOR status:202 alterado com sucesso.
+INFO 2018-09-09 02:32:42 Falhou
+DEBUG 2018-09-09 02:32:42 Consulta Registro:9999-9.
+DEBUG 2018-09-09 02:32:48 Registro 9999-9 Nome:NOVO VALOR status:202 alterado com sucesso.
+INFO 2018-09-09 02:33:54 Falhou
+DEBUG 2018-09-09 02:33:54 Consulta Registro:9999-9.
+DEBUG 2018-09-09 02:34:01 Registro 9999-9 Nome:NOVO VALOR status:202 alterado com sucesso.
+INFO 2018-09-09 02:34:47 Falhou
+DEBUG 2018-09-09 02:34:47 Consulta Registro:9999-9.
+INFO 2018-09-09 02:35:19 Falhou
+DEBUG 2018-09-09 02:35:19 Consulta Registro:9999-9.
+DEBUG 2018-09-09 02:35:24 Registro 9999-9 Nome:NOVO VALOR status:202 alterado com sucesso.
+DEBUG 2018-09-09 02:35:47 Registro 9999-9 Nome:NOVO VALOR status:202 alterado com sucesso.
+DEBUG 2018-09-09 02:36:29 Registro 9999-9 Nome:NOVO VALOR status:202 alterado com sucesso.
+DEBUG 2018-09-09 02:37:24 Consulta Lista 200
+DEBUG 2018-09-09 02:37:48 Nova feira Registro:5555-5 Nome da Feira:5 status:201 criada com sucesso.
+DEBUG 2018-09-09 02:38:10 Nova feira Registro:5555-0 Nome da Feira:5 status:201 criada com sucesso.

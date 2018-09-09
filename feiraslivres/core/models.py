@@ -3,7 +3,6 @@ from django.db import models
 
 class FeirasLivres(models.Model):
 
-    id = models.PositiveSmallIntegerField(primary_key=True)
     long = models.IntegerField()
     lat = models.IntegerField()
     setcens = models.BigIntegerField()
@@ -15,7 +14,7 @@ class FeirasLivres(models.Model):
     regiao5 = models.CharField(max_length=10)
     regiao8 = models.CharField(max_length=10)
     nome_feira = models.CharField(max_length=40)
-    registro = models.CharField(max_length=6)
+    registro = models.CharField(max_length=6, unique=True)
     logradouro = models.CharField(max_length=70)
     numero = models.CharField(max_length=12)
     bairro = models.CharField(max_length=30)
@@ -25,7 +24,7 @@ class FeirasLivres(models.Model):
     class Meta:
         verbose_name = 'Feira Livre em SP'
         verbose_name_plural = 'Feiras Livres em SP'
-        ordering = ['id']
+        ordering = ['registro']
 
         db_table = 'feiraslivres'
 

@@ -158,7 +158,7 @@ LOGGING = {
         'file': {
             'level': 'DEBUG',
             'class': 'logging.FileHandler',
-            'filters': ['require_debug_true'],
+            'filters': ['require_debug_false'],
             'formatter': 'verbose',
             'filename': os.path.join(BASE_DIR, 'core.views.log'),
         },
