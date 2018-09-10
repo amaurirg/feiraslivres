@@ -160,7 +160,7 @@ LOGGING = {
             'class': 'logging.FileHandler',
             'filters': ['require_debug_false'],
             'formatter': 'verbose',
-            'filename': os.path.join(BASE_DIR, 'arquivos/logs.log'),
+            'filename': './feiraslivres/core/logs.log',
         },
     },
     'loggers': {
