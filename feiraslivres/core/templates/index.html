@@ -4,19 +4,227 @@
 <head>
     <meta charset="UTF-8">
     <title>Feiras Livres em SP</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" media="screen" />
+
 </head>
 <body>
-    <div style="text-align: center">
+<div class="container">
+  <div class="row">
+    <div class="col" style="text-align: center">
         <h1>Feiras Livres em São Paulo</h1>
-        <h2>Como utilizar a API</h2>
-        <div>
-            <footer>
-                <h4>Projeto feito com:</h4>
-                <img src="{% static 'img/logo-python.svg' %}" width="150" height="50" alt="">
-                <img src="{% static 'img/logo-django.svg' %}" width="150" height="50" alt=""><br /><br /><br />
-            </footer>
-        </div>
-
     </div>
+  </div>
+
+  <div class="row">
+    <div class="col">
+        <div class="card">
+          <div class="card-body">
+            <blockquote class="blockquote mb-0">
+              <p>Esta API fornece dados sobre feiras livres em São Paulo no formato json que exponha os
+                  dados disponíveis em um arquivo .csv utilizando uma abordagem orientada a recursos.</p>
+              <p>O projeto foi feito na linguagem de programação Python utilizando Django e Django Rest
+                  Framework. Pode ser encontrado em:</p>
+              <p>Github: <a href="https://github.com/amaurirg/feiraslivres">https://github.com/amaurirg/feiraslivres</a></p>
+              <p>Heroku: <a href="https://feiraslivres.herokuapp.com/">https://feiraslivres.herokuapp.com/</a></p>
+            </blockquote>
+          </div>
+        </div>
+    </div>
+  </div>
+    <br>
+
+
+  <div class="row">
+    <div class="col">
+        <h2>Como utilizar a API</h2><br>
+        <p>Clone o projeto em https://github.com/amaurirg/feiraslivres</p>
+    <div class="alert alert-secondary" role="alert">
+      git clone https://github.com/amaurirg/feiraslivres
+    </div>
+
+        <p>Caso utilize um banco de dados diferente do Sqlite3, crie-o primeiro.</p>
+    <div class="alert alert-secondary" role="alert">
+    <p>Edite o arquivo “feiraslivres/.env” com os dados de acesso ao banco de dados e
+    descomente a linha retirando o “#”. Se deixar comentado irá utilizar o padrão do
+    Django Sqlite3.</p>
+    <p>#DATABASE_URL=postgres://usuario:senha@127.0.0.1:5432/nome_banco</p>
+    </div>
+    </div>
+  </div>
+
+    <p>Ainda no arquivo “feiraslivres/.env” tem a opção de deixar o DEBUG como True ou False e a
+        lista de ALLOWED_HOSTS com os hosts permitidos.</p>
+    <p>Crie um ambiente virtual como o virtualenv.</p>
+    <div class="alert alert-secondary" role="alert">
+          Ex: python3 -m venv .venv
+    </div>
+    <br>
+
+    <h4>Os procedimentos a seguir serão com o ambiente virtual ativo</h4>
+
+    <p>Instale todas as dependências utilizando o arquivo “feiraslivres/requirements.txt”.</p>
+    <div class="alert alert-secondary" role="alert">
+          pip install -r requirements.txt
+    </div>
+
+    <p>Se estiver localmente, faça um migrate para criar as tabelas no banco de dados.</p>
+    <div class="alert alert-secondary" role="alert">
+      python manage.py migrate
+    </div>
+
+        <p>As operações abaixo podem ser realizadas localmente ou em produção, bastando alterar:</p>
+    <div class="alert alert-secondary" role="alert">
+        <p>http://localhost:8000/</p>
+        <p>Por:</p>
+        <p>https://feiraslivres.herokuapp.com/</p>
+    </div>
+
+    <p>Para popular o banco, acesse no navegador:</p>
+    <div class="alert alert-secondary" role="alert">
+      http://localhost:8000/popula_banco/
+    </div>
+
+    <p>Caso o banco já tenha sido populado, será retornado a mensagem: “O banco já foi populado!”</p>
+    <p>Caso o banco esteja vazio, será preenchido com os dados do arquivo:</p>
+    <div class="alert alert-secondary" role="alert">
+        <p>feiraslivres/arquivos/DEINFO_AB_FEIRASLIVRES_2014.csv</p>
+        <p>Será retornado a mensagem “Dados importados com sucesso!”</p>
+    </div>
+
+    <p>Para consultar todas as feiras livres ou cadastrar uma feira nova:</p>
+    <p>Os dados poderão serem preenchidos em HTML ou json.</p>
+
+    <div class="alert alert-secondary" role="alert">
+        Consultar:<br>
+        No navegador:<br>
+        http://localhost:8000/feiraslivres/<br>
+        No terminal:<br>
+        curl -X GET http://127.0.0.1:8000/feiraslivres/
+    </div>
+
+    <p>Cadastrar uma nova feira:</p>
+    <p>No navegador basta preencher os campos do formulário ou em modo application/json:</p>
+
+
+    <div class="alert alert-secondary" role="alert">
+        '{<br>
+        &nbsp;&nbsp;"nome_feira": "FEIRA",<br>
+        &nbsp;&nbsp;"registro": "3333-3",<br>
+        &nbsp;&nbsp;"bairro": "BAIRRO",<br>
+        &nbsp;&nbsp;"logradouro": "LOGRADOURO",<br>
+        &nbsp;&nbsp;"numero": "S/N",<br>
+        &nbsp;&nbsp;"referencia": "REFERENCIA",<br>
+        &nbsp;&nbsp;"lat": -23550464,<br>
+        &nbsp;&nbsp;"long": -46659253,<br>
+        &nbsp;&nbsp;"setcens": 355030826000014,<br>
+        &nbsp;&nbsp;"areap": 3550308005013,<br>
+        &nbsp;&nbsp;"coddist": 26,<br>
+        &nbsp;&nbsp;"distrito": "DISTRITO",<br>
+        &nbsp;&nbsp;"codsubpref": 9,<br>
+        &nbsp;&nbsp;"subprefe": "SE",<br>
+        &nbsp;&nbsp;"regiao5": "Centro",<br>
+        &nbsp;&nbsp;"regiao8": "Centro"<br>
+        }'
+    </div>
+
+    <p>No terminal:</p>
+    <div class="alert alert-secondary" role="alert">
+    curl -X POST http://127.0.0.1:8000/feiraslivres/ \<br>
+    &nbsp;&nbsp;-H "Content-Type: application/json" \<br>
+    &nbsp;&nbsp;-d '{<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"nome_feira": "FEIRA",<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"registro": "3333-3",<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"bairro": "BAIRRO",<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"logradouro": "LOGRADOURO",<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"numero": "S/N",<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"referencia": "REFERENCIA",<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"lat": -23550464,<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"long": -46659253,<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"setcens": 355030826000014,<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"areap": 3550308005013,<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"coddist": 26,<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"distrito": "DISTRITO",<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"codsubpref": 9,<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"subprefe": "SE",<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"regiao5": "Centro",<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"regiao8": "Centro"<br>
+        &nbsp;&nbsp;}'
+    </div>
+
+    <p>Para consultar, deletar ou alterar os dados (exceto o registro) de uma feira específica é preciso
+        saber seu registro, por exemplo 1001-4. Os dados poderão serem preenchidos em HTML ou json.</p>
+    <div class="alert alert-secondary" role="alert">
+        Consultar:br<br>
+        No navegador:<br>
+        http://localhost:8000/feiralivre/1001-4/<br>
+        No terminal:<br>
+        curl -X GET http://localhost:8000/feiralivre/1001-4/
+    </div>
+
+    <p>Alterar dados. Mesmo que altere o registro o mesmo não será afetado:</p>
+    <div class="alert alert-secondary" role="alert">
+        &nbsp;&nbsp;curl -X PUT http://127.0.0.1:8000/feiralivre/3333-3/ \<br>
+        &nbsp;&nbsp;-H "Content-Type: application/json" \<br>
+        &nbsp;&nbsp;-d '{<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"nome_feira": "NOVA FEIRA",<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"bairro": "NOVO BAIRRO",<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"logradouro": "NOVO LOGRADOURO",<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"numero": "S/N",<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"referencia": "NOVA REFERENCIA",<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"lat": 0,<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"long": 0,<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"setcens": 0,<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"areap": 0,<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"coddist": 0,<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"distrito": "NOVO DISTRITO",<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"codsubpref": 0,<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"subprefe": "NOVA SUBPREFE",<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"regiao5": "SUL",<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"regiao8": "SUL"<br>
+        &nbsp;&nbsp;}'
+    </div>
+
+    <p>Deletar:</p>
+    <div class="alert alert-secondary" role="alert">
+      curl -X DELETE http://127.0.0.1:8000/feiralivre/3333-3/
+    </div>
+
+    <p>Para fazer uma busca por qualquer campo, digite o campo e o argumento como nos exemplos:</p>
+    <div class="alert alert-secondary" role="alert">
+        No navegador:<br>
+        http://localhost:8000/feiraslivres/nome_feira/ipiranga/<br>
+        http://localhost:8000/feiraslivres/distrito/vila mariana/<br>
+        http://localhost:8000/feiraslivres/regiao5/leste/<br>
+        http://localhost:8000/feiraslivres/bairro/santana/<br>
+        http://localhost:8000/feiraslivres/subprefe/butanta/<br>
+        http://localhost:8000/feiraslivres/long/-46567647/<br>
+        http://localhost:8000/feiraslivres/id/440/<br><br>
+        No terminal:<br>
+        curl -X GET http://localhost:8000/feiraslivres/nome_feira/ipiranga/<br>
+        curl -X GET http://localhost:8000/feiraslivres/distrito/vila mariana/<br>
+        curl -X GET http://localhost:8000/feiraslivres/regiao5/leste/<br>
+        curl -X GET http://localhost:8000/feiraslivres/bairro/santana/<br>
+        curl -X GET http://localhost:8000/feiraslivres/subprefe/butanta/<br>
+        curl -X GET http://localhost:8000/feiraslivres/long/-46567647/<br>
+        curl -X GET http://localhost:8000/feiraslivres/id/440/
+    </div>
+
+        <p>As transações feitas nesta API estão sendo armazenadas em um arquivo de logs:</p>
+    <div class="alert alert-secondary" role="alert">
+      feiraslivres/core/logs.log
+    </div>
+
+    <div style="text-align: center">
+        <footer>
+            <h4>Projeto feito com:</h4>
+            <img src="{% static 'img/logo-python.svg' %}" width="150" height="50" alt="">
+            <img src="{% static 'img/logo-django.svg' %}" width="150" height="50" alt=""><br /><br /><br />
+        </footer>
+    </div>
+
+</div>
+
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+
 </body>
 </html>
