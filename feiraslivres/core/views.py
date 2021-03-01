@@ -93,7 +93,7 @@ class FeiraLivre(APIView):
 
 
 def popula_banco(request):
-    arquivo_csv = (os.path.abspath("arquivos/DEINFO_AB_FEIRASLIVRES_2014.csv"))
+    arquivo_csv = (os.path.abspath("docs/DEINFO_AB_FEIRASLIVRES_2014.csv"))
 
     file = open(arquivo_csv)
     fileReader = csv.reader(file)
